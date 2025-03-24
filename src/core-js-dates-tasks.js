@@ -73,29 +73,8 @@ function getDayName(date) {
  * Date('2024-02-13T00:00:00Z') => Date('2024-02-16T00:00:00Z')
  * Date('2024-02-16T00:00:00Z') => Date('2024-02-23T00:00:00Z')
  */
-function getNextFriday(date) {
-  const today = new Date(date);
-  const todayDayWeek = today.getUTCDay();
-  if (todayDayWeek < 5) {
-    return new Date(
-      today.getUTCFullYear(),
-      today.getUTCMonth(),
-      today.getUTCDate() + (todayDayWeek - 6)
-    );
-  }
-  if (todayDayWeek > 5) {
-    return new Date(
-      today.getUTCFullYear(),
-      today.getUTCMonth(),
-      today.getUTCDate() + todayDayWeek
-    );
-  }
-
-  return new Date(
-    today.getUTCFullYear(),
-    today.getUTCMonth(),
-    today.getUTCDate() + (todayDayWeek + 2)
-  );
+function getNextFriday(/* date */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -313,15 +292,8 @@ function getQuarter(date) {
  * { start: '01-01-2024', end: '15-01-2024' }, 1, 3 => ['01-01-2024', '05-01-2024', '09-01-2024', '13-01-2024']
  * { start: '01-01-2024', end: '10-01-2024' }, 1, 1 => ['01-01-2024', '03-01-2024', '05-01-2024', '07-01-2024', '09-01-2024']
  */
-function getWorkSchedule(period, countWorkDays, countOffDays) {
-  const { start, end } = period.start;
-  const results = [];
-  const startDay = new Date(start).getDate();
-  const endDay = new Date(end).getDate();
-
-  for (let i = startDay; i < endDay; i += countOffDays) {
-    console.log()
-  }
+function getWorkSchedule(/* period, countWorkDays, countOffDays */) {
+  throw new Error('Not implemented');
 }
 
 /**
